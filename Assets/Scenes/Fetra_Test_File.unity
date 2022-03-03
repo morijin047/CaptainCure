@@ -394,11 +394,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1224386520105328234, guid: 1ca27d246050ae04d9d3b7b03b56a212,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3805081612031256865, guid: 1ca27d246050ae04d9d3b7b03b56a212,
         type: 3}
       propertyPath: m_Name
@@ -484,11 +479,6 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5482605205469626942, guid: 1ca27d246050ae04d9d3b7b03b56a212,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5567357826544356432, guid: 1ca27d246050ae04d9d3b7b03b56a212,
         type: 3}
       propertyPath: m_IsTrigger
@@ -519,11 +509,6 @@ PrefabInstance:
       propertyPath: zombieSound
       value: 
       objectReference: {fileID: 17254489}
-    - target: {fileID: 8580081382230888173, guid: 1ca27d246050ae04d9d3b7b03b56a212,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ca27d246050ae04d9d3b7b03b56a212, type: 3}
 --- !u!1001 &93326588
@@ -2898,21 +2883,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5664163023465644911, guid: d4fcd95619e0bf840b09054295717828,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664163023465644911, guid: d4fcd95619e0bf840b09054295717828,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664163023465644911, guid: d4fcd95619e0bf840b09054295717828,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664163023465644911, guid: d4fcd95619e0bf840b09054295717828,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.9
       objectReference: {fileID: 0}
@@ -5081,11 +5051,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1224386520105328234, guid: 1ca27d246050ae04d9d3b7b03b56a212,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3805081612031256865, guid: 1ca27d246050ae04d9d3b7b03b56a212,
         type: 3}
       propertyPath: m_Name
@@ -5171,11 +5136,6 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5482605205469626942, guid: 1ca27d246050ae04d9d3b7b03b56a212,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5567357826544356432, guid: 1ca27d246050ae04d9d3b7b03b56a212,
         type: 3}
       propertyPath: m_IsTrigger
@@ -5206,11 +5166,6 @@ PrefabInstance:
       propertyPath: zombieSound
       value: 
       objectReference: {fileID: 2006679880}
-    - target: {fileID: 8580081382230888173, guid: 1ca27d246050ae04d9d3b7b03b56a212,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ca27d246050ae04d9d3b7b03b56a212, type: 3}
 --- !u!4 &1592916632 stripped
@@ -7252,7 +7207,7 @@ PrefabInstance:
     - target: {fileID: 5110562773512449770, guid: f6e6311a3adb2774582fd586023df58e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.68
+      value: 3.41
       objectReference: {fileID: 0}
     - target: {fileID: 5110562773512449770, guid: f6e6311a3adb2774582fd586023df58e,
         type: 3}
@@ -7303,7 +7258,7 @@ PrefabInstance:
         type: 3}
       propertyPath: zombieAi
       value: 
-      objectReference: {fileID: 945494625}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6e6311a3adb2774582fd586023df58e, type: 3}
 --- !u!1001 &6757494429742003677

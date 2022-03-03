@@ -1,0 +1,73 @@
+
+Animation needed to be in place in order for the colliders and the physic movement to properly function.
+
+Only one crouching animation in place on mixamo so i had to work with it. Sadly, the animation doesnt crouch low enough
+so i had to reduce the collider size more than what the model actually looks like. Basicaly, my collider does not match my model
+while crouching.
+
+While rolling, the animation move foward a bit. Checking In place when downloading the animation fixed the problem to some degree
+but it still wasnt properly accurate since there was still some movement after the landing part of the animation. An early
+fixed that i used for now is to make the model move slightly foward in order to mimic where he would actually land
+
+Need to find why horizontal movement reduce vertical movement (ex: jump while running)
+
+During the transition between crouching and walking, both respective animation fight each other. Would need to look into
+this further.
+
+After 5 day of existencial crisis im back. The problem of the crouch was the timer not the animation.
+
+Made a climbing system that simply moves up and down when near a surface climable. Tried to go for both arm movement and stuff
+but it was way too overkill for this project.
+
+When on top of a climbing station, i added a trigger zone that would call my ledgeAnimation fct. The problem was that during
+that animation, the movement to place the rigid body was being called at the same time so it looked like i was moving while 
+i was just getting off the ledge. A cool trick i learn is to call functions from inside an animation. Basically, when the ledge
+animation is over (WHEN HES ACTUALLY ON THE PLATFORM) i then call my ledge physic movement that i split in two to force move the rigidbody.
+Its not perfect but i deemed reasonable and appropriate for a project of this calliber.
+
+I fixed my roll and jump by using the same technique i used for my ledges with the help of booleans being set to false when the 
+animations end. 
+
+INPUT PLAYER
+
+Learned and implemented InputPlayer component. It is possible to customize controls during runtime. Had to adjust it with Stephane
+base code. Basically, I split a lot of his code into function so that i can call specific portion of his code when a button is pressed
+For now it supports gamepads and keyboard. Couldnt figure out how to use the right stick for moving the cinema machine but from what i gathered so far,
+its a settings in unity input settings. I would need to change it during runtime but thats a story for another day. Also, couldnt figure out 
+how to use Keydown and KeyUp with my InputPlayer. Its weird because theres a pressed and released mode but it doesnt seem to work. Ive seen people on youtube pull it off
+so its definetly possible. 
+
+Physics behave weirdly when modified in the Update function but Input reading behave weidly when called in the fixedUpdate fct.
+This is a rabbit hole that i settled for just doing eveyrthing in FixedUpdate. So far, thanks to all my booleans, every input are called correctly.
+On rare occasion, some trigger gets triggered twice in one press. Cant replicate at will so its hard to investigate but im pretty sure its because
+of input interaction in the fixedUpdate. Might be wrong.
+
+Heavily understimated the difficulty of using someone else code but i managed to overcome this by watching a bunch of tutorials 
+on youtube/google and applying the logic to Stephane's code. 
+
+When implementing grab/Throw features, My biggest fear was to break what Fetra had already done. I dont know how his zombie 
+doesnt fly off with the thrown object (good for him tho) but i had to disable the collider of the throwable. The problem was that for 
+some reason, IT ACTUALLY BROKE FETRA'S ZOMBIE... After an hour of struggle, Ive found the middle ground. Set the collider to trigger zone.
+The collider were still there for whatever calculation the zombie needed them for( Seriously I really tried to understand where it was needed but i couldnt find anything)
+but physics were ingored since they were only triggers. It still make my character fly off a bit if i have zero momemtum.
+
+Yep. As suspected, Freezing and Unfreezing my position during the animation worked like a charm. Seriously, this is litteraly overpowered.
+
+For the sound my main problem was that i could only play one clip at a time with Fetra's soundScript. Basically, Fetra was playing the preloaded clip by default.
+Now i dont know if could have just changed it to PlayOneShot without telling him since he would need to change everything were this soundscript was used.
+Instead, i went for a 500iq play. audioSrc.PlayOneShot(audioSrc.clip); Litteraly, this is the same as audioSrc.Play but the main difference is that it allows me to change and play multiple clip at the same time
+and for all the sounds Fetra used with the default linked clip in the editior it would still work since audioSrc.clip means the clip loaded by default.
+
+I also had to make a new fct in his script to manually make a sound since the only method of doing a sound was onCollisionEnter.
+Simple enough but thats where what i did earlier came in extra clutch. Since makeSound is called on collision with anything (Most likely for an object),
+my player was making sound but with the last loadedclip. In my case it was the coughing sound. By using PlayOneShot i could load the clip , call the makeSound fct
+and then unload clip so that the rest of SoundScript wouldnt make anysound.
+
+When my character is coughing, It makes an extra loud noise for the zombie. He can hear it from a far. It was as simple as changing the audioMaxDistance
+since this is how the zombie was hearing stuff. My coughing is random but also based on where the zombie is. After a max distance of 30, the max odd will be applied and he will cough more.
+When near the zombie, the player will barely cough. Every half a second, theres a probability that the player will cough.
+
+
+
+
+
